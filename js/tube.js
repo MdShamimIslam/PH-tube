@@ -22,20 +22,29 @@ const handleTabClick = async (categoryId) =>{
     const data = await res.json();
     const singleCategory = data.data;
     console.log(singleCategory);
+    
+    const imgURL = 'https://pbs.twimg.com/media/DDPKLHNVwAA87D5.jpg';
+    const noData = document.getElementById('no-data');
+    noData.textContent = '';
+    if(!singleCategory.length){
+        const imgElement = document.createElement('img');
+        imgElement.src = imgURL;
+        noData.appendChild(imgElement)
+    }
+
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
     singleCategory.forEach(perCategory => {
-        console.log(perCategory);
+        // console.log(perCategory);
     const cardDiv = document.createElement('div');
     cardDiv.classList = `card m-4 bg-base-300 shadow-xl `
     cardDiv.innerHTML = `
-            
-            <img class="h-[200px] rounded" src="${perCategory.thumbnail}" alt="Shoes" />
+            <img class="h-[200px] rounded" src="${perCategory.thumbnail}" alt="thumbnail" />
             <div class="card-body">
                 <div class="flex justify-start">
                     <img class="w-[40px] h-10 rounded-full" src="${perCategory?.authors[0]?.profile_picture}" alt="Shoes" />
                     <div class="ml-2">
-                    <h2 class="card-title">${perCategory.title}</h2>
+                    <h2 class="card-title">${perCategory?.title}</h2>
                     <div class="mt-2 flex items-center">
                         <p>${perCategory?.authors[0]?.profile_name}</p>
                         <svg class="" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -52,20 +61,13 @@ const handleTabClick = async (categoryId) =>{
                     </div>
                     <p class="mt-2">${perCategory?.others?.views} views</p>
                     </div>
-                </div>
-                
-                    
+                </div> 
             </div>
-
     `;
     cardContainer.appendChild(cardDiv);
     })
-
-    
-
-    
 }
-
+handleTabClick('1000')
 
 
 

@@ -21,8 +21,8 @@ const handleTabClick = async (categoryId) =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
     const data = await res.json();
     const singleCategory = data.data;
-    console.log(singleCategory);
-    
+    // console.log(singleCategory);
+
     const imgURL = 'https://pbs.twimg.com/media/DDPKLHNVwAA87D5.jpg';
     const noData = document.getElementById('no-data');
     noData.textContent = '';
@@ -35,7 +35,15 @@ const handleTabClick = async (categoryId) =>{
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
     singleCategory.forEach(perCategory => {
-        // console.log(perCategory);
+        console.log(perCategory.others);
+
+        // todo: sorting by descending
+        const descendingPerCategory = perCategory.sort((a,b) => {
+            // b?.others?.views - a[0]?.others?.views
+            console.log(a,b);
+        });
+        console.log(descendingPerCategory);
+
     const cardDiv = document.createElement('div');
     cardDiv.classList = `card m-4 bg-base-300 shadow-xl `
     cardDiv.innerHTML = `

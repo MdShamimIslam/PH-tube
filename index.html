@@ -7,6 +7,7 @@
     <!-- Tailwind and daisyUI link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/5f87c56190.js" crossorigin="anonymous"></script>
     <title>Ph Tube</title>
 </head>
 <body class="max-w-screen-xl mx-auto my-8">
@@ -27,7 +28,7 @@
               </a>
             </div>
             <div class="navbar-center hidden lg:flex">
-              <button class="btn  btn-active btn-ghost">Sort by view</button>
+              <button onclick="handleSortByView()" class="btn  btn-active btn-ghost">Sort by view</button>
             </div>
             <div class="navbar-end">
               <a href="blog.html" class="btn text-white bg-[#FF1F3D]">Blog</a>
@@ -46,7 +47,7 @@
         <!-- card container part -->
         <div id="no-data" class="mt-16 flex justify-center"></div>
         <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          
+
             <!-- todo:name and icon -->
           <!-- show all card -->
           </div>

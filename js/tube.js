@@ -35,19 +35,18 @@ const handleTabClick = async (categoryId) =>{
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
     singleCategory.forEach(perCategory => {
-        console.log(perCategory.others);
-
-        // todo: sorting by descending
-        const descendingPerCategory = perCategory.sort((a,b) => {
-            // b?.others?.views - a[0]?.others?.views
-            console.log(a,b);
-        });
-        console.log(descendingPerCategory);
+        const categoryTime =(perCategory.others.posted_date);
+        const date = new Date (categoryTime * 1000);
+        const hours = date.getUTCHours();
+        const minutes = date.getUTCMinutes();
 
     const cardDiv = document.createElement('div');
     cardDiv.classList = `card m-4 bg-base-300 shadow-xl `
     cardDiv.innerHTML = `
             <img class="h-[200px] rounded" src="${perCategory.thumbnail}" alt="thumbnail" />
+            <div  class="bg-black text-white p-1 w-[100px] rounded text-center -mt-8 ml-72 md:ml-56 lg:ml-40 text-[10px]">
+            ${hours && minutes ? `<p>${hours} hrs ${minutes} min ago</p>` : ''}
+            </div>
             <div class="card-body">
                 <div class="flex justify-start">
                     <img class="w-[40px] h-10 rounded-full" src="${perCategory?.authors[0]?.profile_picture}" alt="Shoes" />
@@ -75,6 +74,7 @@ const handleTabClick = async (categoryId) =>{
     cardContainer.appendChild(cardDiv);
     })
 }
+
 handleTabClick('1000')
 
 

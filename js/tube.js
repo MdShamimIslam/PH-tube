@@ -79,12 +79,13 @@ const generateCardList = (dataList) => {
                 <div class="flex justify-start">
                     <img class="w-[40px] h-10 rounded-full" src="${
                       perCategory?.authors[0]?.profile_picture
-                    }" alt="Shoes" />
+                    }" alt="thumbnail" />
                     <div class="ml-2">
                     <h2 class="card-title">${perCategory?.title}</h2>
                     <div class="mt-2 flex items-center">
 
                         <p>${perCategory?.authors[0]?.profile_name}</p>
+                       
                         ${
                           authVerify === true
                             ? `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -100,6 +101,7 @@ const generateCardList = (dataList) => {
                        </svg>`
                             : ""
                         }
+                       
 
                     </div>
                     <p class="mt-2">${

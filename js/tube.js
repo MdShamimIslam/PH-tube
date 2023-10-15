@@ -53,6 +53,7 @@ const generateCardList = (dataList) => {
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
   dataList.forEach((perCategory) => {
+    console.log(perCategory);
     const authVerify = perCategory?.authors[0]?.verified;
     // convert time
     const categoryTime = perCategory.others.posted_date;

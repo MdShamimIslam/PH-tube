@@ -26,18 +26,18 @@ const handleTabClick = async (categoryId) => {
   const data = await res.json();
   const singleCategory = data.data;
   allDataList = [...singleCategory];
- 
+
   let newDataList = allDataList.map((data) => {
     const { others } = data;
     let views = 0;
     let charList = others.views.split("");
     if (!!charList.length && charList.includes("K")) {
       charList[charList.length - 1] = "000";
-      views = parseFloat(charList.slice(0,-1).join(''))*1000;
+      views = parseFloat(charList.slice(0, -1).join("")) * 1000;
     }
     return { ...data, others: { ...others, views } };
   });
-  
+
   allDataList = newDataList;
   generateCardList(allDataList);
 };
@@ -116,11 +116,9 @@ const generateCardList = (dataList) => {
 };
 
 const handleSortByView = () => {
-  console.log("clicked");
   allDataList.sort((a, b) => b.others.views - a.others.views);
-  console.log({ allDataList });
   generateCardList(allDataList);
 };
 
 handleTabClick("1000");
-loadCategories();  
+loadCategories();

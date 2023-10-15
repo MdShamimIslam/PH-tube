@@ -1,61 +1,73 @@
 <!DOCTYPE html>
-<html  data-theme="light" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html data-theme="light" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="image/ph-logo.png" type="image/x-icon" />
     <!-- Tailwind and daisyUI link -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/5f87c56190.js" crossorigin="anonymous"></script>
+
     <title>Ph Tube</title>
-</head>
-<body class="max-w-screen-xl mx-auto my-8">
+  </head>
+  <body class="max-w-screen-xl mx-auto my-8">
     <header>
-        <div class="navbar bg-base-100">
-            <div class="navbar-start">
-              <div class="dropdown">
-                <label tabindex="0" class="btn btn-ghost lg:hidden">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                </label>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                 
-                  <button class="btn  btn-active btn-ghost">Sort by view</button>
-                </ul>
-              </div>
-              <a href="/" class="btn btn-ghost normal-case text-xl">
-                <img src="image/Logo.png" alt="">
-              </a>
-            </div>
-            <div class="navbar-center hidden lg:flex">
-              <button onclick="handleSortByView()" class="btn  btn-active btn-ghost">Sort by view</button>
-            </div>
-            <div class="navbar-end">
-              <a href="blog.html" class="btn text-white bg-[#FF1F3D]">Blog</a>
-            </div>
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <label tabindex="0" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </label>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <button class="btn btn-active btn-ghost">Sort by view</button>
+            </ul>
           </div>
-          <div class="divider mt-5"></div>
+          <a href="/" class="btn btn-ghost normal-case text-xl">
+            <img src="image/Logo.png" alt="" />
+          </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <button onclick="handleSortByView()" class="btn btn-active btn-ghost">
+            Sort by view
+          </button>
+        </div>
+        <div class="navbar-end">
+          <a href="blog.html" class="btn text-white bg-[#FF1F3D]">Blog</a>
+        </div>
+      </div>
+      <div class="divider mt-5"></div>
     </header>
     <main>
-
-        <!-- Tab container part -->
-        <div id="tab-container" class="flex justify-center">
-            <div class="tabs ">
-                <!-- show category -->
-            </div>
-        </div>
-        <!-- card container part -->
-        <div id="no-data" class="mt-16 flex justify-center"></div>
-        <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-
-            <!-- todo:name and icon -->
-          <!-- show all card -->
-          </div>
-
+      <div id="tab-container" class="flex justify-center">
+        <div class="tabs"></div>
+      </div>
+      <div id="no-data" class="mt-16 w-3/4 mx-auto flex justify-center"></div>
+      <div
+        id="card-container"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
+      ></div>
     </main>
-    <footer>
-
-    </footer>
+    <footer></footer>
     <script src="js/tube.js"></script>
-</body>
+  </body>
 </html>
